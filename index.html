@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Profil Proyek - Smart Home Miniature</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="profile-container">
+
+    <div class="profile-hero">
+
+      <!-- Jam -->
+      <div class="profile-clock">
+        <div id="profile-time">00:00:00</div>
+        <div id="profile-date">Tanggal</div>
+      </div>
+
+      <p class="eyebrow">Proyek SKIOT · XII TEI</p>
+      <h1>Rumah kecil, kendali penuh</h1>
+      <p>
+        Miniatur rumah pintar dengan deteksi gerakan dan kendali lampu jarak jauh,
+        dibangun di atas ESP8266 dan MQTT.
+      </p>
+
+    </div>
+
+    <div class="team-badges">
+
+      <div class="badge">
+        <img src="Adit.jpeg" alt="Foto Anggota 1">
+        <div>
+          <p class="badge-role">Embedded System Engineer</p>
+          <p class="badge-name">Adithya Dwi Putra</p>
+        </div>
+      </div>
+
+      <div class="badge">
+        <img src="Usman.jpeg" alt="Foto Anggota 2">
+        <div>
+          <p class="badge-role">Software Engineer</p>
+          <p class="badge-name">Muhammad Usman</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="info-block">
+      <h3>Identitas</h3>
+
+      <div class="info-grid">
+
+        <div>
+          <p class="k">Kelas</p>
+          <p class="v">XII TEI</p>
+        </div>
+
+        <div>
+          <p class="k">Bidang Aplikasi</p>
+          <p class="v">Rumah Tangga</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h3>Deskripsi</h3>
+
+      <p class="description-text">
+        Sistem ini mensimulasikan rumah pintar berskala miniatur dengan tiga ruangan:
+        Ruang Tamu, Kamar, dan Garasi. Satu sensor PIR memantau area umum untuk
+        keamanan, sementara tiga lampu dapat dikendalikan secara terpisah dari
+        jarak jauh melalui dashboard web. Status dikirim secara real-time
+        menggunakan ESP8266 dan protokol MQTT.
+      </p>
+
+    </div>
+
+    <div class="info-block">
+      <h3>Fitur Utama</h3>
+
+      <ul class="feature-readout">
+        <li><span class="dot">●</span> Deteksi gerakan area umum (1 sensor PIR)</li>
+        <li><span class="dot">●</span> Kendali lampu jarak jauh, per ruangan</li>
+        <li><span class="dot">●</span> Mode keamanan, aktif / nonaktif</li>
+        <li><span class="dot">●</span> Histori deteksi gerakan</li>
+      </ul>
+
+    </div>
+
+    <a href="dashboard.html" class="btn-primary">
+      Buka dashboard
+    </a>
+
+  </div>
+
+  <!-- JavaScript khusus jam halaman profil -->
+  <script>
+    function updateProfileClock() {
+
+      const now = new Date();
+
+      const time = now.toLocaleTimeString('en-GB', {
+        timeZone: 'Asia/Jakarta'
+      });
+
+      const date = now.toLocaleDateString('id-ID', {
+        timeZone: 'Asia/Jakarta',
+        weekday: 'long',
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      });
+
+      document.getElementById('profile-time').textContent = time;
+      document.getElementById('profile-date').textContent = date + ' · WIB';
+    }
+
+    updateProfileClock();
+
+    setInterval(updateProfileClock, 1000);
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "House",
+			"path": "../../PlatformIO/Projects/House"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "SmartHouse"
+	}
+}

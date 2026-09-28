@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard - Smart Home Miniature</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="dashboard-header">
+  <div>
+    <h1>Panel kendali</h1>
+    <p>Status keamanan dan lampu, diperbarui langsung dari perangkat.</p>
+  </div>
+
+  <div id="dashboard-clock">
+    <div id="dashboard-time">00:00:00</div>
+    <div id="dashboard-date">Tanggal</div>
+  </div>
+</div>
+
+    <div class="status-panel">
+      <div class="status-row">
+        <span class="status-label">Mode keamanan</span>
+        <label class="switch">
+          <input type="checkbox" id="securityMode">
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="status-row">
+        <span class="status-label">Status area umum</span>
+        <span class="status-value" id="motion-status">AMAN</span>
+      </div>
+    </div>
+
+    <div class="room-container">
+
+      <div class="window-card" id="card-ruang_tamu">
+        <div class="window-pane"></div>
+        <div class="window-footer">
+          <h2>Ruang Tamu</h2>
+          <label class="switch">
+            <input type="checkbox" id="light-ruang_tamu" onchange="toggleLight('ruang_tamu', this.checked)">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="window-card" id="card-kamar">
+        <div class="window-pane"></div>
+        <div class="window-footer">
+          <h2>Kamar</h2>
+          <label class="switch">
+            <input type="checkbox" id="light-kamar" onchange="toggleLight('kamar', this.checked)">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="window-card" id="card-garasi">
+        <div class="window-pane"></div>
+        <div class="window-footer">
+          <h2>Garasi</h2>
+          <label class="switch">
+            <input type="checkbox" id="light-garasi" onchange="toggleLight('garasi', this.checked)">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="log-section">
+      <h3>Histori deteksi gerakan</h3>
+      <table id="logTable">
+        <thead>
+          <tr>
+            <th>Waktu</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+              <tbody id="logBody"></tbody>
+      </table>
+    </div>
+
+    <a href="index.html" class="btn-back btn-back-bottom">Kembali ke profil</a>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js"></script>
+  <script type="module" src="script.js"></script>
+
+</body>
+</html>
