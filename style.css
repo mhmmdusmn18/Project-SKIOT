@@ -484,3 +484,56 @@ tr:last-child td {
   font-size: 13px;
   margin-top: 4px;
 }
+
+/* =========================
+   RESPONSIVE UNTUK HP
+   ========================= */
+
+@media (max-width: 768px) {
+
+  .dashboard-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px 15px;
+    box-sizing: border-box;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  #dashboard-clock {
+    text-align: left;
+  }
+
+  #dashboard-time {
+    font-size: 26px;
+  }
+
+  .room-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .window-card {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .status-panel {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .log-section {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  #logTable {
+    width: 100%;
+    min-width: 0;
+  }
+}
